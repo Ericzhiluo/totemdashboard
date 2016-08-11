@@ -12,7 +12,7 @@ Meteor.startup(() => {
     // old way of including npm packages. now changed in newer meteor
     // var mqtt    = Meteor.npmRequire('mqtt');
     var client  = mqtt.connect({
-    	// Reads variables from file "development_env.json" located in .meteor/local
+    	// Reads variables from file "development_env.json" located in root
     	// you have to start meteor and load this file using command "meteor --settings development_env.json"
       host: Meteor.settings.mqtt.host,
       port: 1883,
