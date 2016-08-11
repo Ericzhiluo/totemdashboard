@@ -1,0 +1,10 @@
+{
+  "name": "totemdashboard",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "mqtt": "^1.13.0"
+  }
+}
