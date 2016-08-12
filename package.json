@@ -5,6 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
-    "mqtt": "^1.13.0"
+    "bufferutil": "^1.2.1",
+    "mqtt": "^1.13.0",
+    "utf-8-validate": "^1.2.1"
   }
 }

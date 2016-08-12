@@ -1,6 +1,6 @@
 Router.configure({
-    layoutTemplate: 'mainLayout',
-    notFoundTemplate: 'notFound'
+	layoutTemplate: 'mainLayout',
+	notFoundTemplate: 'notFound'
 
 });
 
@@ -9,14 +9,31 @@ Router.configure({
 //
 
 Router.route('/pageOne', function () {
-    this.render('pageOne');
+	this.render('pageOne');
 });
 
 Router.route('/pageTwo', function () {
-    this.render('pageTwo');
+	this.render('pageTwo');
 });
 
+// Routes for login system
 Router.route('/', function () {
-    Router.go('pageOne');
+	this.render('login');
+	this.layout('blankLayout')
+});
+
+Router.route('/login', function () {
+	this.render('login');
+	this.layout('blankLayout')
+});
+
+Router.route('/forgotPassword', function () {
+    this.render('forgotPassword');
+    this.layout('blankLayout')
+});
+
+Router.route('/register', function () {
+    this.render('register');
+    this.layout('blankLayout')
 });
 
