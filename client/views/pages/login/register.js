@@ -1,13 +1,15 @@
 Template.register.events({
-	'submit form': function(){
+	'submit form': function(event){
 		event.preventDefault();
 		var firstname = $('[name=firstname').val();
 		var lastname = $('[name=lastname').val();
     var email = $('[name=email]').val();
     var password = $('[name=password]').val();
     Accounts.createUser({
-      fistname: firstname,
-      lastname: lastname,
+    	profile: {
+	      firstname: firstname,
+	      lastname: lastname
+	    },  
       email: email,
       password: password
     }, function(error){	

@@ -4,3 +4,9 @@ Template.navigation.rendered = function(){
     $('#side-menu').metisMenu();
 
 };
+
+Template.navigation.helpers({
+	currentuser: function(){
+		return Meteor.user().profile.firstname + " " + Meteor.user().profile.lastname
+	}
+});
