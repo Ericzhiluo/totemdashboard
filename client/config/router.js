@@ -7,6 +7,9 @@ Router.configure({
 //
 // Example pages routes
 //
+Router.route('/dashboard2', function () {
+    this.render('dashboard2');
+});
 
 Router.route('/pageOne', function () {
 	this.render('pageOne');

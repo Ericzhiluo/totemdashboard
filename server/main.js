@@ -5,9 +5,10 @@ import { Meteor } from 'meteor/meteor';
 import mqtt from 'mqtt';
 
 // initialized a database
-Machine1 = new Mongo.Collection('machine1');
+import { Machine1 } from '../db/mongo.js';
 
 Meteor.startup(() => {
+
   // code to run on server at startup
     // old way of including npm packages. now changed in newer meteor
     // var mqtt    = Meteor.npmRequire('mqtt');
@@ -22,14 +23,17 @@ Meteor.startup(() => {
     });
     
     client.on('connect', function () {
-      client.subscribe('iot-2/type/RaspberryPi/id/+/evt/+/fmt/+');
+      client.subscribe('iot-2/type/Accuvim001/id/+/evt/+/fmt/+');
       console.log('connected')
     });
 
-    client.on('message', function (topic, message) { 
+    client.on('message', Meteor.bindEnvironment(function callback(topic, message) { 
       console.log(message.toString());
 
       // save into database
-   	  Machine1.insert(message);
-    });
+   	  Machine1.insert({
+        message: message.toString()
+      });
+
+    }));
 });
