@@ -36,3 +36,4 @@ spacebars@1.0.12
 check@1.2.3
 
 accounts-password						#User account login system
+email												#email SMTP

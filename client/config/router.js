@@ -1,27 +1,42 @@
+// Check login status before loading any pages, except login, forgotPassword or register
+var OnBeforeActions;
+
+OnBeforeActions = {
+    loginRequired: function(pause) {
+      if (!Meteor.userId()) {
+        this.render('login');
+        this.layout('blankLayout')
+        return pause();
+      }
+    }
+};
+
+Router.onBeforeAction(OnBeforeActions.loginRequired, {
+    except: ['login', 'forgotPassword', 'register', 'passwordReset.:_token']
+});
+
+// Runs the following in all pages
 Router.configure({
 	layoutTemplate: 'mainLayout',
 	notFoundTemplate: 'notFound'
 
 });
 
-//
-// Example pages routes
-//
 
-Router.route('/pageOne', function () {
+// Routes for pages starts here:
+Router.route('/', function () {
 	this.render('pageOne');
 });
 
+Router.route('/pageOne', function () {
+    this.render('pageOne');
+});
+
 Router.route('/pageTwo', function () {
-	this.render('pageTwo');
+    this.render('pageTwo');
 });
 
 // Routes for login system
-Router.route('/', function () {
-	this.render('login');
-	this.layout('blankLayout')
-});
-
 Router.route('/login', function () {
 	this.render('login');
 	this.layout('blankLayout')
@@ -36,4 +51,14 @@ Router.route('/register', function () {
     this.render('register');
     this.layout('blankLayout')
 });
+
+Router.route('/passwordReset/:_token', function () {
+    var params = this.params;
+    var token = params._token;
+    this.render('passwordReset');
+    this.layout('blankLayout');
+    Session.set('token', token);
+});
+
+
 
