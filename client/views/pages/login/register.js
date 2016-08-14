@@ -14,9 +14,10 @@ Template.register.events({
       password: password
     }, function(error){	
     	if(error){
-    		console.log(error.reason);
+    		toastr.error(error.reason, "Account registration error");
     	} else {
     		Router.go('pageOne');
+            toastr("Log in sucessful!", "New account created.")
     	}
     });
 	}

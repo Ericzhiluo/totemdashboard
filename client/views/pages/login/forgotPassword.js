@@ -5,9 +5,9 @@ Template.forgotPassword.events({
 		options.email = $('[name=email]').val();
 		Accounts.forgotPassword(options, function(error){
 			if(error){
-				console.log(error.reason);
+				toastr.error(error.reason, "Password reset error");
 			} else {
-			console.log("email sent!");
+			toastr.success("Password reset email has been sent to you.");
 			}
 		});
 	}

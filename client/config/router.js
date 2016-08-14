@@ -12,7 +12,7 @@ OnBeforeActions = {
 };
 
 Router.onBeforeAction(OnBeforeActions.loginRequired, {
-    except: ['login', 'forgotPassword', 'register', 'passwordReset.:_token']
+    except: ['login', 'forgotPassword', 'register', 'passwordReset.:token']
 });
 
 // Runs the following in all pages
@@ -52,9 +52,9 @@ Router.route('/register', function () {
     this.layout('blankLayout')
 });
 
-Router.route('/passwordReset/:_token', function () {
+Router.route('/passwordReset/:token', function () {
     var params = this.params;
-    var token = params._token;
+    var token = params.token;
     this.render('passwordReset');
     this.layout('blankLayout');
     Session.set('token', token);
