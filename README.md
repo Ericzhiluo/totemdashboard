@@ -1,11 +1,7 @@
 # totemdashboard
 
 ## To do list:
-1. Bill to setup email system for password recovery and dashboard alerts
-2. Bill to setup growl
-
-###notes
-1. MQTT broker connection should only occur after login.
+1. Bill: MQTT broker connection should only occur after login.
 
 ###Components of the dashboard
 1. Device information
@@ -28,3 +24,4 @@
 
 5. Data analytic panel
   * user defined machine status
+  * checkout MongoDB aggregation framework: https://docs.mongodb.com/manual/aggregation/
