@@ -26,13 +26,14 @@ Meteor.startup(() => {
       client.subscribe('iot-2/type/Accuvim001/id/+/evt/+/fmt/+');
       console.log('connected')
     });
-
+    
     client.on('message', Meteor.bindEnvironment(function callback(topic, message) { 
       console.log(message.toString());
 
       // save into database
    	  Machine1.insert({
-        message: message.toString()
+        message: JSON.parse(message.toString()),
+        time: Date().toLocaleString()
       });
 
     }));
