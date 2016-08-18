@@ -3,11 +3,11 @@ var OnBeforeActions;
 
 OnBeforeActions = {
     loginRequired: function(pause) {
-      if (!Meteor.userId()) {
-        this.render('login');
-        this.layout('blankLayout')
-        return pause();
-      }
+        if (!Meteor.userId()) {
+            this.render('login');
+            this.layout('blankLayout');
+            return pause();
+        }   
     }
 };
 
@@ -19,9 +19,7 @@ Router.onBeforeAction(OnBeforeActions.loginRequired, {
 Router.configure({
 	layoutTemplate: 'mainLayout',
 	notFoundTemplate: 'notFound'
-
 });
-
 
 // Routes for pages starts here:
 Router.route('/', function () {
@@ -39,17 +37,17 @@ Router.route('/pageTwo', function () {
 // Routes for login system
 Router.route('/login', function () {
 	this.render('login');
-	this.layout('blankLayout')
+	this.layout('blankLayout');
 });
 
 Router.route('/forgotPassword', function () {
     this.render('forgotPassword');
-    this.layout('blankLayout')
+    this.layout('blankLayout');
 });
 
 Router.route('/register', function () {
     this.render('register');
-    this.layout('blankLayout')
+    this.layout('blankLayout');
 });
 
 Router.route('/passwordReset/:token', function () {
@@ -59,6 +57,3 @@ Router.route('/passwordReset/:token', function () {
     this.layout('blankLayout');
     Session.set('token', token);
 });
-
-
-
