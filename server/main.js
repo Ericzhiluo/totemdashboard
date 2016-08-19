@@ -35,6 +35,8 @@ Meteor.startup(() => {
         message: JSON.parse(message.toString()),
         time: Date().toLocaleString()
       });
-
+      // Meteor.publish('mqttdata', function() {
+      //   return Machine1.findOne({}, {sort: {time: -1, limit: 1}}).message.d
+      // })
     }));
 });
