@@ -8,6 +8,7 @@ OnBeforeActions = {
             this.layout('blankLayout');
             return pause();
         }   
+        this.next();
     }
 };
 
@@ -27,7 +28,7 @@ Router.route('/', function () {
 });
 
 Router.route('/pageOne', function () {
-    this.render('pageOne');
+    this.render('dashboard2');
 });
 
 Router.route('/pageTwo', function () {
