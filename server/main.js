@@ -1,8 +1,8 @@
-import { Meteor } from 'meteor/meteor';
+// import { Meteor } from 'meteor/meteor';
 
-// include npm package in meteor
-// https://www.npmjs.com/package/mqtt
-import mqtt from 'mqtt';
+// // include npm package in meteor
+// // https://www.npmjs.com/package/mqtt
+// import mqtt from 'mqtt';
 
 // initialized a database
 import { Machine1 } from '../db/mongo.js';
