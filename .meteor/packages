@@ -16,7 +16,6 @@ standard-minifier-css@1.1.8   # CSS minifier run for production mode
 standard-minifier-js@1.1.8    # JS minifier run for production mode
 es5-shim@4.6.13                # ECMAScript 5 compatibility for older browsers.
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 ecmascript@0.5.7
 less@2.7.4
@@ -36,3 +35,5 @@ spacebars@1.0.12
 check@1.2.3
 
 accounts-password						#User account login system
+mkarliner:mqtt
+autopublish
