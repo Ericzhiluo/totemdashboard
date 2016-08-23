@@ -8,7 +8,6 @@ import mqtt from 'mqtt';
 import { Machine1 } from '../db/mongo.js';
 
 Meteor.startup(() => {
-
   // code to run on server at startup
     // old way of including npm packages. now changed in newer meteor
     // var mqtt    = Meteor.npmRequire('mqtt');
