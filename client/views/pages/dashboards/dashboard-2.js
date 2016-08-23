@@ -12,6 +12,7 @@ Template.dashboard2.destroyed = function(){
 };
 
 import { Machine1 } from '../../../../db/mongo.js';
+import { Machine1_rules } from '../../../../db/mongo.js';
 
 var client  = mqtt.connect({
   // Reads variables from file "development_env.json" located in root
@@ -36,29 +37,40 @@ client.on('message', Meteor.bindEnvironment(function callback(topic, message) {
   $('#current').html(parse_message.d.current.toFixed(7))
 }));
 
-// Template.dashboard2.helpers({
-//   voltage: function(voltage){
-//     if (typeof voltage !== 'undefined'){
-//       return voltage
-//     } else {
-//       return "loading"
-//     }
-//   },
-//   power: function(voltage){
-//     if (typeof power !== 'undefined'){
-//       return power
-//     } else {
-//       return "loading"
-//     }
-//   },
-//   current: function(voltage){
-//     if (typeof current !== 'undefined'){
-//       return current
-//     } else {
-//       return "loading"
-//     }
-//   },
-// });
+Template.dashboard2.events({
+  'submit .rules_form'(event) {
+    // Prevent default browser form submit
+    event.preventDefault();
+    console.log('submited');
+    // Get value from form element
+    const target = event.target;
+    const from = target.from.value;
+    const to = target.to.value;
+    const state = target.state.value;
+    // Insert a task into the collection
+    Machine1_rules.insert({
+      rule: {
+        from: from,
+        to: to,
+        state: state
+      },
+      createdAt: new Date(), // current time
+    });
+ 
+    // Clear form
+    target.from.value = '';
+    target.to.value = '';
+  },
+
+  'click .rules_delete'(event) {
+    Machine1_rules.remove(this._id);
+  },
+});
+Template.dashboard2.helpers({
+  Machine1_rules() {
+    return Machine1_rules.find({});
+  },
+});
 
 
 
