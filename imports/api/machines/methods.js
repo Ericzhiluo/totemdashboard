@@ -1,8 +1,8 @@
-import { Machine1_rules } from '../db/mongo.js'
+import { Machines } from '../db/mongo.js'
 
 Meteor.methods({
 	'checkstatus'({power}) {
-		rules = Machine1_rules.find().fetch()
+		const rules = Machines.findOne(id).statusRules.find().fetch()
 		for (var i in rules) {
 		  if (power >= rules[i].rule.from && power < rules[i].rule.to) {
 		  	console.log(rules[i].rule.from)
@@ -14,4 +14,3 @@ Meteor.methods({
 	}
 })
 
-	
