@@ -36,7 +36,6 @@ check@1.2.3
 
 
 accounts-password						#User account login system
-autopublish
 email												#email SMTP
 chrismbeckett:toastr				#growl-like notification
 

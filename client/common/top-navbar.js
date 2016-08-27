@@ -1,3 +1,5 @@
+import './top-navbar.html';
+
 Template.topNavbar.rendered = function(){
 
     // FIXED TOP NAVBAR OPTION

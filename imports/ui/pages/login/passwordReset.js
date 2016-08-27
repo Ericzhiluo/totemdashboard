@@ -1,7 +1,4 @@
-// Accounts.onResetPasswordLink(function(token, done){
-// });
-
-
+import './passwordReset.html';
 
 Template.passwordReset.events({
 	'submit form': function(event){

@@ -1,3 +1,5 @@
+import './navigation.html';
+
 Template.navigation.rendered = function(){
 
     // Initialize metisMenu

@@ -1,3 +1,5 @@
+import './footer.html';
+
 Template.footer.rendered = function () {
 
     // FIXED FOOTER

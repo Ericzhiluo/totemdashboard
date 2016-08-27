@@ -1,3 +1,5 @@
+import './forgotPassword.html';
+
 Template.forgotPassword.events({
 	'submit form': function(event){
 		event.preventDefault();

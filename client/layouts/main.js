@@ -1,3 +1,6 @@
+import { Template } from 'meteor/templating';
+import './main.html';
+
 Template.mainLayout.rendered = function(){
 
     // Minimalize menu when screen is less than 768px

@@ -1,3 +1,5 @@
+import './register.html';
+
 Template.register.events({
 	'submit form': function(event){
 		event.preventDefault();

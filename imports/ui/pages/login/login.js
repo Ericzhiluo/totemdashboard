@@ -1,3 +1,5 @@
+import './login.html';
+
 Template.login.events({
 	'submit form': function(event){
 		event.preventDefault();

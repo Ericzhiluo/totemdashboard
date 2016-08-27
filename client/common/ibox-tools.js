@@ -1,3 +1,5 @@
+import './ibox-tools.html';
+
 Template.iboxTools.events({
 
     'click .collapse-link': function (event) {

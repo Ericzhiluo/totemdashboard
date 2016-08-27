@@ -1,8 +1,16 @@
+import { Meteor } from 'meteor/meteor';
+import { Machines } from '../../../api/machines/machines.js';
+import '../../../api/machines/machines.js';
+import '../../components/dataCard.js';
+// import '../../components/dataCard.html';
+import './dashboard-2.html';
+
+
 Template.dashboard2.rendered = function(){
     // Set white background color for top navbar
     $('body').addClass('light-navbar');
     $('#voltage').html("Loading...");
-    $('#power').html("Loading...");
+    // $('#power').html("Loading...");
     $('#current').html("Loading...")
     $('#status').html("Loading...")
 };
@@ -11,9 +19,6 @@ Template.dashboard2.destroyed = function(){
     // Remove special class
     $('body').removeClass('light-navbar');
 };
-import { Meteor } from 'meteor/meteor';
-import { Machine1 } from '../../../../db/mongo.js';
-import { Machine1_rules } from '../../../../db/mongo.js';
 
 
 

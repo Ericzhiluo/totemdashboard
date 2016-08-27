@@ -1,3 +1,5 @@
+import './blank.html';
+
 Template.blankLayout.rendered = function(){
 
     // Add gray color for background in blank layout
